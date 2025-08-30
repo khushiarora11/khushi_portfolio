@@ -9,8 +9,8 @@ import Link from "next/link"
 
 export default function CVPage() {
   useEffect(() => {
-    // Redirect to updated PDF after page loads
-    window.location.href = "/Khushi_Arora_CV_Updated.pdf"
+    // Redirect to PDF after page loads
+    window.location.href = "/Khushi_Arora_CV.pdf"
   }, [])
 
   return (
@@ -30,7 +30,7 @@ export default function CVPage() {
             </Button>
             <Button asChild>
               <Link
-                href="/Khushi_Arora_CV_Updated.pdf"
+                href="/Khushi_Arora_CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2"
