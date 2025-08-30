@@ -1,24 +1,24 @@
 import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
+import "@/app/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/toaster"
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Khushi Arora | Social Media Strategist",
+  title: "Khushi Arora | Digital Marketing Portfolio",
   description:
-    "Portfolio of Khushi Arora, a Social Media Strategist specializing in content creation, campaign management, and community building.",
-    generator: 'v0.dev'
+    "Digital Marketing professional specializing in social media marketing, content creation, and campaign management",
+    generator: 'v0.app'
 }
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
@@ -30,7 +30,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-
-import './globals.css'

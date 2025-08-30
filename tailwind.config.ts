@@ -53,16 +53,6 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Custom color palette
-        "happy-hearts": "#d6665d",
-        "bite-tongue": "#dd796b",
-        "copper-coin": "#dd845b",
-        "golden-nugget": "#db8b40",
-        "packing-paper": "#b99b61",
-        succulent: "#8fa781",
-        estragon: "#a7ad77",
-        motherland: "#beb26c",
-        luxurious: "#d4b35f",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -89,4 +79,3 @@ const config = {
 } satisfies Config
 
 export default config
-

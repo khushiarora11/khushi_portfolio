@@ -1,30 +1,21 @@
-import Header from "@/components/header"
-import Hero from "@/components/hero"
-import About from "@/components/about"
-import Skills from "@/components/skills"
-import Experience from "@/components/experience"
-import Education from "@/components/education"
-import Projects from "@/components/projects"
-import Testimonials from "@/components/testimonials"
-import Contact from "@/components/contact"
-import Footer from "@/components/footer"
-import { ScrollToTop } from "@/components/scroll-to-top"
+import { HeroSection } from "@/components/hero-section"
+import { StatsSection } from "@/components/stats-section"
+import { AboutSection } from "@/components/about-section"
+import { SkillsSection } from "@/components/skills-section"
+import { RecommendationsSection } from "@/components/recommendations-section"
+import { ContactSection } from "@/components/contact-section"
+import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background">
-      <Header />
-      <Hero />
-      <About />
-      <Skills />
-      <Experience />
-      <Education />
-      <Projects />
-      <Testimonials />
-      <Contact />
+    <div className="min-h-screen bg-gradient-to-br from-fuchsia-50 via-purple-50 to-violet-50 dark:from-fuchsia-950 dark:via-purple-950 dark:to-violet-950">
+      <HeroSection />
+      <StatsSection />
+      <AboutSection />
+      <SkillsSection />
+      <RecommendationsSection />
+      <ContactSection />
       <Footer />
-      <ScrollToTop />
-    </main>
+    </div>
   )
 }
-
