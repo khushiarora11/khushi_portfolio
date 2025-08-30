@@ -44,13 +44,9 @@ export function HeroSection() {
                 size="lg"
                 className="border-fuchsia-600 text-fuchsia-600 hover:bg-fuchsia-50 dark:border-fuchsia-400 dark:text-fuchsia-400 dark:hover:bg-fuchsia-950 bg-transparent"
               >
-                <a
-                  href="/Khushi_Arora_CV.pdf"
-                  download="Khushi_Arora_CV.pdf"
-                  className="inline-flex items-center gap-2"
-                >
-                  <FileText className="h-4 w-4" /> Download CV
-                </a>
+                <Link href="/cv" className="inline-flex items-center gap-2">
+                  <FileText className="h-4 w-4" /> View CV
+                </Link>
               </Button>
               <Button
                 asChild
