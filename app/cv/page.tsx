@@ -9,8 +9,8 @@ import Link from "next/link"
 
 export default function CVPage() {
   useEffect(() => {
-    // Redirect to PDF immediately
-    window.location.href = "/Khushi_Arora_CV.pdf"
+    // Redirect to HTML CV
+    window.location.href = "/cv.html"
   }, [])
 
   return (
@@ -20,7 +20,7 @@ export default function CVPage() {
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-3xl font-bold mb-6">Loading CV...</h1>
           <p className="text-muted-foreground mb-8">
-            If you are not automatically redirected to the CV, please click the download button below.
+            If you are not automatically redirected to the CV, please click the link below.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild variant="outline">
@@ -30,12 +30,12 @@ export default function CVPage() {
             </Button>
             <Button asChild>
               <Link
-                href="/Khushi_Arora_CV.pdf"
+                href="/cv.html"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2"
               >
-                <Download className="h-4 w-4" /> Download CV
+                <Download className="h-4 w-4" /> View CV
               </Link>
             </Button>
           </div>
