@@ -41,6 +41,8 @@ const skillCategories: SkillCategory[] = [
     category: "Analytics & SEO",
     skills: [
       "Google Analytics",
+      "Google Analytics 4",
+      "Looker Studio",
       "SEMrush",
       "KPI Tracking",
       "SEO Optimization",

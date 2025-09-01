@@ -17,6 +17,14 @@ interface Recommendation {
 
 const recommendations: Recommendation[] = [
   {
+    name: "Joel Bland",
+    position: "Student Recruitment and Marketing",
+    company: "Newcastle University",
+    date: "May 20, 2025",
+    text: "I had the pleasure of managing Khushi during their time as our social media intern at Newcastle University, and they were a real asset to the team. They brought fresh, creative ideas to our school's Instagram and consistently produced high-quality, engaging content. Their editing skills are top-notch, and they always delivered on time with a great attitude. Reliable, creative, and driven—any organisation would be lucky to have them, especially with their ability to stay up to date with trending content and produce their own spin on things.",
+    initials: "JB",
+  },
+  {
     name: "Pronami Priti Borah",
     position: "People Operations Head",
     company: "TravClan",
@@ -59,7 +67,7 @@ export function RecommendationsSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {recommendations.map((recommendation, index) => (
             <motion.div
               key={index}
@@ -73,7 +81,7 @@ export function RecommendationsSection() {
                   <div className="flex items-start gap-4 mb-4">
                     <Avatar className="h-12 w-12 border-2 border-fuchsia-200 dark:border-fuchsia-800">
                       {recommendation.avatarUrl ? (
-                        <AvatarImage src={recommendation.avatarUrl} alt={recommendation.name} />
+                        <AvatarImage src={recommendation.avatarUrl || "/placeholder.svg"} alt={recommendation.name} />
                       ) : null}
                       <AvatarFallback className="bg-fuchsia-100 text-fuchsia-800 dark:bg-fuchsia-900 dark:text-fuchsia-200">
                         {recommendation.initials}

@@ -254,8 +254,9 @@ export default function CVPage() {
               <p className="text-gray-700 text-justify">
                 <span className="font-bold">Skills:</span> Social Media Management & Strategy, Content Creation & Video
                 Editing (Canva, Figma, Adobe Creative Suite & CapCut), Copywriting, Social Media Analytics & KPI
-                Tracking, SEO & Website Management (Google analytics, SEMrush), Campaign Management, Cross-functional
-                Collaboration, CRM & Email Marketing (Hubspot, Mailchimp), Event Management.
+                Tracking, SEO & Website Management (Google Analytics, Google Analytics 4, Looker Studio, SEMrush),
+                Campaign Management, Cross-functional Collaboration, CRM & Email Marketing (Hubspot, Mailchimp), Event
+                Management.
               </p>
               <p className="text-gray-700">
                 <span className="font-bold">Languages:</span> English (Fluent) & Hindi (Native).
