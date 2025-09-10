@@ -1,9 +1,9 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { MapPin } from "lucide-react"
+import { motion } from "framer-motion"
 
 export function AboutSection() {
   return (
@@ -16,9 +16,6 @@ export function AboutSection() {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto"
         >
-          <div className="inline-block px-3 py-1 rounded-full bg-fuchsia-100 dark:bg-fuchsia-900/30 text-fuchsia-800 dark:text-fuchsia-300 text-sm font-medium mb-2">
-            About Me
-          </div>
           <h2 className="text-4xl font-bold tracking-tight bg-gradient-to-r from-fuchsia-600 to-violet-600 dark:from-fuchsia-400 dark:to-violet-400 text-transparent bg-clip-text mb-4">
             About Me
           </h2>

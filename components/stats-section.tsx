@@ -1,7 +1,5 @@
 "use client"
 
-import { motion } from "framer-motion"
-
 interface StatItemProps {
   number: string
   text: string
@@ -10,18 +8,14 @@ interface StatItemProps {
   delay: number
 }
 
-function StatItem({ number, text, color, bgColor, delay }: StatItemProps) {
+function StatItem({ number, text, color, bgColor }: StatItemProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay }}
-      viewport={{ once: true }}
-      className={`${bgColor} rounded-lg p-6 text-center shadow-sm`}
+    <div
+      className={`${bgColor} rounded-lg p-6 text-center shadow-sm animate-in fade-in slide-in-from-bottom-4 duration-700`}
     >
       <h3 className={`text-4xl font-bold ${color} mb-2`}>{number}</h3>
       <p className="text-gray-600 dark:text-gray-300">{text}</p>
-    </motion.div>
+    </div>
   )
 }
 

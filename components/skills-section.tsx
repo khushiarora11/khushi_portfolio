@@ -1,6 +1,5 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
@@ -72,13 +71,7 @@ export function SkillsSection() {
       className="py-20 bg-gradient-to-br from-fuchsia-50 via-purple-50 to-violet-50 dark:from-fuchsia-950 dark:via-purple-950 dark:to-violet-950"
     >
       <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
           <div className="inline-block px-3 py-1 rounded-full bg-fuchsia-100 dark:bg-fuchsia-900/30 text-fuchsia-800 dark:text-fuchsia-300 text-sm font-medium mb-2">
             Skills & Languages
           </div>
@@ -88,7 +81,7 @@ export function SkillsSection() {
           <p className="text-muted-foreground max-w-2xl mx-auto">
             A comprehensive overview of my technical skills and language proficiency.
           </p>
-        </motion.div>
+        </div>
         <Tabs defaultValue="Digital Marketing" className="max-w-4xl mx-auto">
           <TabsList className="grid grid-cols-2 md:grid-cols-5 mb-8">
             {skillCategories.map((category) => (
@@ -102,17 +95,13 @@ export function SkillsSection() {
               <Card className="border-fuchsia-200 dark:border-fuchsia-800">
                 <CardContent className="p-6">
                   <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill, index) => (
-                      <motion.div
+                    {category.skills.map((skill) => (
+                      <Badge
                         key={skill}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.3, delay: index * 0.05 }}
+                        className="bg-gradient-to-r from-fuchsia-500 to-violet-500 hover:from-fuchsia-600 hover:to-violet-600 text-white dark:from-fuchsia-600 dark:to-violet-600 dark:hover:from-fuchsia-500 dark:hover:to-violet-500 px-3 py-1 text-sm"
                       >
-                        <Badge className="bg-gradient-to-r from-fuchsia-500 to-violet-500 hover:from-fuchsia-600 hover:to-violet-600 text-white dark:from-fuchsia-600 dark:to-violet-600 dark:hover:from-fuchsia-500 dark:hover:to-violet-500 px-3 py-1 text-sm">
-                          {skill}
-                        </Badge>
-                      </motion.div>
+                        {skill}
+                      </Badge>
                     ))}
                   </div>
                 </CardContent>
@@ -121,16 +110,10 @@ export function SkillsSection() {
           ))}
         </Tabs>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="mt-12 text-center"
-        >
+        <div className="mt-12 text-center animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
           <h3 className="text-xl font-bold mb-4">Languages</h3>
           <div className="flex flex-wrap justify-center gap-3">
-            {languages.map((language, index) => (
+            {languages.map((language) => (
               <Badge
                 key={language}
                 variant="outline"
@@ -140,7 +123,7 @@ export function SkillsSection() {
               </Badge>
             ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )
