@@ -25,7 +25,7 @@ export function StatsSection() {
       <div className="container">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <StatItem
-            number="2+"
+            number="3+"
             text="Years Experience"
             color="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-fuchsia-500"
             bgColor="bg-pink-50 dark:bg-pink-950/30"
@@ -46,7 +46,7 @@ export function StatsSection() {
             delay={0.3}
           />
           <StatItem
-            number="5000+"
+            number="10,000+"
             text="Audience Reached"
             color="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500"
             bgColor="bg-cyan-50 dark:bg-cyan-950/30"
