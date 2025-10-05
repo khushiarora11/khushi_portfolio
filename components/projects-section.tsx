@@ -93,6 +93,10 @@ const brandProjectsData = [
     id: "newcastle-university",
     brandName: "Newcastle University",
     brandDescription: "A world-class research-intensive university located in Newcastle upon Tyne, UK.",
+    instagramLinks: [
+      { url: "https://www.instagram.com/newcastleuni/", label: "Newcastle University" },
+      { url: "https://www.instagram.com/ncl_sacs/?hl=en", label: "School of Arts and Cultures" },
+    ],
     projects: [
       {
         title: "Carabao Cup Score Predictions",
@@ -103,12 +107,60 @@ const brandProjectsData = [
         instagramLink: "https://www.instagram.com/reel/DHP1O9iomRt/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
         thumbnailUrl: "/images/carabao-cup-thumbnail.png",
       },
+      {
+        title: "Engaging Instagram Reels for SACS",
+        description:
+          "Created engaging Instagram reels for the School of Arts and Cultures, showcasing student activities, events, campus life, and the vibrant creative community at Newcastle University.",
+        results:
+          "These reels contributed to increased engagement and visibility for the School of Arts and Cultures' social media presence, reaching thousands of students and prospective applicants.",
+        instagramReels: [
+          {
+            url: "https://www.instagram.com/p/DHWRflkxU3-/?hl=en",
+            thumbnail: "/images/newcastle-reel-1.png",
+            title: "3 Must-Visit Spots in Newcastle if You're an Art Lover",
+          },
+          {
+            url: "https://www.instagram.com/p/DG3FIPCMfZy/?hl=en",
+            thumbnail: "/images/newcastle-reel-2.png",
+            title: "Spring Days Are Back on Campus",
+          },
+          {
+            url: "https://www.instagram.com/p/DGvkbmOM7HE/?hl=en",
+            thumbnail: "/images/newcastle-reel-3.png",
+            title: "POV: You are at Creative Careers 2025",
+          },
+          {
+            url: "https://www.instagram.com/p/DJCbxyZMX_Q/?hl=en",
+            thumbnail: "/images/newcastle-reel-4.png",
+            title: "POV: The View You've Seen Every Day",
+          },
+          {
+            url: "https://www.instagram.com/p/DHv8uhyMxsN/?hl=en",
+            thumbnail: "/images/newcastle-reel-5.png",
+            title: "Newcastle Student Music Showcase",
+          },
+          {
+            url: "https://www.instagram.com/p/DITcSitMThz/?hl=en",
+            thumbnail: "/images/newcastle-reel-6.png",
+            title: "This is What Magic Sounds Like",
+          },
+          {
+            url: "https://www.instagram.com/p/DH3oFLUteUJ/?hl=en",
+            thumbnail: "/images/newcastle-reel-7.png",
+            title: "Film Offer Holder Day - Culture Lab Tour",
+          },
+        ],
+      },
     ],
   },
   {
     id: "travclan",
     brandName: "TravClan",
     brandDescription: "A B2B travel tech platform that empowers travel agents with technology and marketing solutions.",
+    instagramLinks: [
+      { url: "https://www.instagram.com/official.travclan/?hl=en", label: "TravClan Official" },
+      { url: "https://www.instagram.com/life.at.travclan/?hl=en", label: "Life at TravClan" },
+    ],
     projects: [
       {
         title: "Social Media Carousel Posts",

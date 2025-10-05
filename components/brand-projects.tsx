@@ -7,6 +7,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { CarouselPostsGrid } from "@/components/carousel-posts-grid"
 import { VideoProjectCard } from "@/components/video-project-card"
 import { InstagramProjectCard } from "@/components/instagram-project-card"
+import { InstagramReelsMarquee } from "@/components/instagram-reels-marquee"
+import { Instagram } from "lucide-react"
+import Link from "next/link"
 
 interface SubProject {
   title: string
@@ -34,6 +37,12 @@ interface Project {
   youtubeEmbedId?: string
   instagramLink?: string
   thumbnailUrl?: string
+  instagramReels?: { url: string; thumbnail: string; title?: string }[]
+}
+
+interface InstagramLink {
+  url: string
+  label?: string
 }
 
 interface BrandProjectsProps {
@@ -43,6 +52,7 @@ interface BrandProjectsProps {
   index: number
   carouselPosts?: CarouselPost[]
   tfpCarouselPosts?: CarouselPost[]
+  instagramLinks?: InstagramLink[]
 }
 
 export function BrandProjects({
@@ -52,6 +62,7 @@ export function BrandProjects({
   index,
   carouselPosts,
   tfpCarouselPosts,
+  instagramLinks,
 }: BrandProjectsProps) {
   return (
     <motion.div
@@ -65,12 +76,52 @@ export function BrandProjects({
         <CardHeader className="bg-gradient-to-r from-fuchsia-100 to-violet-100 dark:from-fuchsia-900/30 dark:to-violet-900/30">
           <CardTitle className="text-2xl font-bold text-fuchsia-600 dark:text-fuchsia-400">{brandName}</CardTitle>
           <CardDescription className="text-base">{brandDescription}</CardDescription>
+          {instagramLinks && instagramLinks.length > 0 && (
+            <div className="flex items-center gap-2 flex-wrap pt-2">
+              <span className="text-sm text-muted-foreground">
+                {brandName === "TravClan"
+                  ? "Worked on two accounts:"
+                  : brandName === "Newcastle University"
+                    ? "Follow us on Instagram:"
+                    : "Instagram:"}
+              </span>
+              <div className="flex gap-2 items-center">
+                {instagramLinks.map((link, idx) => (
+                  <Link
+                    key={idx}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-fuchsia-600 dark:text-fuchsia-400 hover:text-fuchsia-700 dark:hover:text-fuchsia-300 transition-colors"
+                    title={link.label || "Instagram"}
+                  >
+                    <Instagram className="h-5 w-5" />
+                    <span className="text-sm font-medium">{link.label}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
         </CardHeader>
         <CardContent className="p-6">
           <div className="grid grid-cols-1 gap-6">
             {projects.map((project, idx) => (
               <div key={idx}>
-                {project.customContent === "carousel-posts" && carouselPosts ? (
+                {project.instagramReels ? (
+                  <div className="space-y-6">
+                    <div className="text-center">
+                      <h3 className="text-2xl font-bold text-fuchsia-600 dark:text-fuchsia-400 mb-2">
+                        {project.title}
+                      </h3>
+                      <p className="text-muted-foreground mb-4 max-w-3xl mx-auto">{project.description}</p>
+                      <div className="bg-fuchsia-50 dark:bg-fuchsia-900/20 p-4 rounded-md inline-block">
+                        <p className="font-medium text-fuchsia-800 dark:text-fuchsia-300 mb-1">Results:</p>
+                        <p className="text-muted-foreground">{project.results}</p>
+                      </div>
+                    </div>
+                    <InstagramReelsMarquee reels={project.instagramReels} />
+                  </div>
+                ) : project.customContent === "carousel-posts" && carouselPosts ? (
                   <Card className="overflow-hidden h-full border-fuchsia-200 dark:border-fuchsia-800 hover:shadow-md transition-shadow duration-300">
                     <CardHeader className="pb-2">
                       <CardTitle className="text-xl font-bold text-fuchsia-600 dark:text-fuchsia-400">
