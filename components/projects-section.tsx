@@ -88,6 +88,45 @@ const tfpCarouselPosts = [
   },
 ]
 
+// SACS carousel posts data
+const sacsCarouselPosts = [
+  {
+    title: "#SACSEdition - Cover",
+    description: "Introducing the viral trend adapted for SACS students",
+    imageUrl: "/images/sacs-carousel-1.png",
+  },
+  {
+    title: "Free Art Supplies",
+    description: "Every art student's dream - unlimited free supplies",
+    imageUrl: "/images/sacs-carousel-2.png",
+  },
+  {
+    title: "Flawless Rehearsal",
+    description: "The eternal hope for a technical issue-free rehearsal",
+    imageUrl: "/images/sacs-carousel-3.png",
+  },
+  {
+    title: "Empty Museum at Golden Hour",
+    description: "The perfect moment for art appreciation without crowds",
+    imageUrl: "/images/sacs-carousel-4.png",
+  },
+  {
+    title: "Remember the Lyrics",
+    description: "Every performer's nightmare - forgetting lyrics on stage",
+    imageUrl: "/images/sacs-carousel-5.png",
+  },
+  {
+    title: "Film Funding Success",
+    description: "The dream of getting that film project greenlit",
+    imageUrl: "/images/sacs-carousel-6.png",
+  },
+  {
+    title: "Deadline Extension",
+    description: "The universal student wish that never gets old",
+    imageUrl: "/images/sacs-carousel-7.png",
+  },
+]
+
 const brandProjectsData = [
   {
     id: "newcastle-university",
@@ -150,6 +189,14 @@ const brandProjectsData = [
             title: "Film Offer Holder Day - Culture Lab Tour",
           },
         ],
+      },
+      {
+        title: "#SACSEdition – Trend-Jacking Social Post",
+        description:
+          "Jumped on the viral 'Deepseek This, Deepseek That' trend to create lighthearted, relatable content about the real experiences of arts and culture students.",
+        results:
+          "Boosted engagement and connection with both current and prospective students by tapping into a trend in a way that felt genuine to the SACS community and voice.",
+        customContent: "sacs-carousel-posts",
       },
     ],
   },
@@ -339,6 +386,7 @@ export function ProjectsSection() {
                 index={0}
                 carouselPosts={brand.id === "travclan" ? travClanCarouselPosts : undefined}
                 tfpCarouselPosts={brand.id === "the-first-parents" ? tfpCarouselPosts : undefined}
+                sacsCarouselPosts={brand.id === "newcastle-university" ? sacsCarouselPosts : undefined}
               />
             </TabsContent>
           ))}

@@ -52,6 +52,7 @@ interface BrandProjectsProps {
   index: number
   carouselPosts?: CarouselPost[]
   tfpCarouselPosts?: CarouselPost[]
+  sacsCarouselPosts?: CarouselPost[]
   instagramLinks?: InstagramLink[]
 }
 
@@ -62,6 +63,7 @@ export function BrandProjects({
   index,
   carouselPosts,
   tfpCarouselPosts,
+  sacsCarouselPosts,
   instagramLinks,
 }: BrandProjectsProps) {
   return (
@@ -107,7 +109,24 @@ export function BrandProjects({
           <div className="grid grid-cols-1 gap-6">
             {projects.map((project, idx) => (
               <div key={idx}>
-                {project.instagramReels ? (
+                {project.customContent === "sacs-carousel-posts" && sacsCarouselPosts ? (
+                  <Card className="overflow-hidden h-full border-fuchsia-200 dark:border-fuchsia-800 hover:shadow-md transition-shadow duration-300">
+                    <CardHeader className="pb-2">
+                      <CardTitle className="text-xl font-bold text-fuchsia-600 dark:text-fuchsia-400">
+                        {project.title}
+                      </CardTitle>
+                      <CardDescription className="text-base">{project.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="bg-fuchsia-50 dark:bg-fuchsia-900/20 p-3 rounded-md mb-6">
+                        <p className="font-medium text-fuchsia-800 dark:text-fuchsia-300">Results:</p>
+                        <p className="text-muted-foreground">{project.results}</p>
+                      </div>
+
+                      <CarouselPostsGrid posts={sacsCarouselPosts} />
+                    </CardContent>
+                  </Card>
+                ) : project.instagramReels ? (
                   <div className="space-y-6">
                     <div className="text-center">
                       <h3 className="text-2xl font-bold text-fuchsia-600 dark:text-fuchsia-400 mb-2">
