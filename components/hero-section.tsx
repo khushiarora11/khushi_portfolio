@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Navbar } from "@/components/navbar"
 import { motion } from "framer-motion"
-import { ArrowDown, Linkedin, Mail, FileText } from "lucide-react"
+import { ArrowDown, Linkedin, Mail, FileText, FolderOpen } from 'lucide-react'
 import Link from "next/link"
 import Image from "next/image"
 
@@ -33,6 +33,16 @@ export function HeroSection() {
                 asChild
                 size="lg"
                 className="bg-fuchsia-600 hover:bg-fuchsia-700 dark:bg-fuchsia-600 dark:hover:bg-fuchsia-700"
+              >
+                <Link href="/projects" className="inline-flex items-center gap-2">
+                  <FolderOpen className="h-4 w-4" /> View Projects
+                </Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-fuchsia-600 text-fuchsia-600 hover:bg-fuchsia-50 dark:border-fuchsia-400 dark:text-fuchsia-400 dark:hover:bg-fuchsia-950 bg-transparent"
               >
                 <Link href="#contact" className="inline-flex items-center gap-2">
                   <Mail className="h-4 w-4" /> Contact Me

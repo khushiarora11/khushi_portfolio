@@ -127,6 +127,113 @@ const sacsCarouselPosts = [
   },
 ]
 
+// LinkedIn posts data
+const linkedInPostsData = [
+  // Team Promotions
+  {
+    title: "Product & Tech Team Promotions",
+    caption: "We are thrilled to announce the well-deserved promotions of our incredibly talented members in our Product & Tech Team. Keep pushing boundaries and achieving excellence!",
+    date: "Jul 2023",
+    likes: 152,
+    comments: 3,
+    imageUrl: "/images/linkedin-product-tech.png",
+    postUrl: "https://www.linkedin.com/posts/travclanb2b_team-work-future-activity-7081589130190610432-yf7Q",
+    category: "promotions",
+  },
+  {
+    title: "Senior Team Promotions Announcement",
+    caption: "We are thrilled to announce the well-deserved promotions of our incredibly talented members in our Senior Team. Their remarkable contributions and hard work have been truly inspiring!",
+    date: "Jul 2023",
+    likes: 314,
+    comments: 13,
+    imageUrl: "/images/linkedin-senior-team.png",
+    postUrl: "https://www.linkedin.com/posts/travclanb2b_team-business-success-activity-7083022088902516738-ZnSP",
+    category: "promotions",
+  },
+  {
+    title: "Software Engineers II Promotions",
+    caption: "We are thrilled to announce the well-deserved promotions of our incredibly talented team members to the role of Software Engineers II. Their technical excellence is truly remarkable!",
+    date: "Jun 2023",
+    likes: 195,
+    comments: 12,
+    imageUrl: "/images/linkedin-software-eng.png",
+    postUrl: "https://www.linkedin.com/posts/travclanb2b_promotions-congratulations-tech-activity-7077605483779399680-qquj",
+    category: "promotions",
+  },
+  {
+    title: "Corporate Team Promotions",
+    caption: "We are thrilled to announce the well-deserved promotions of our incredibly talented members in Corporate Team - Marketing and People Operations excellence!",
+    date: "Jun 2023",
+    likes: 218,
+    comments: 12,
+    imageUrl: "/images/linkedin-corporate-team.png",
+    postUrl: "https://www.linkedin.com/posts/travclanb2b_business-marketing-team-activity-7079023397543829504-pqu6",
+    category: "promotions",
+  },
+  {
+    title: "Business Managers Promotions",
+    caption: "We are thrilled to announce the well-deserved promotions of our incredibly talented team members to the role of Business Managers. Your dedication has been remarkable!",
+    date: "Jul 2023",
+    likes: 290,
+    comments: 12,
+    imageUrl: "/images/linkedin-business-managers.png",
+    postUrl: "https://www.linkedin.com/posts/travclanb2b_growth-success-team-activity-7082294214528483328-4RYx",
+    category: "promotions",
+  },
+  // Trips & Events
+  {
+    title: "Extraordinary Maldives Fam Trip",
+    caption: "Our travel agents enjoyed an all-expenses-paid fam trip with unforgettable experiences. From serene beach escapes to thrilling water sports and cultural immersions!",
+    date: "Jun 2023",
+    likes: 172,
+    comments: 4,
+    imageUrl: "/images/linkedin-maldives-fam.png",
+    postUrl: "https://www.linkedin.com/posts/travclanb2b_business-share-share-activity-7075078972400631808-U-ff",
+    category: "trips",
+  },
+  {
+    title: "Women Entrepreneurs Maldives Trip",
+    caption: "We take immense pride in having these exceptional women entrepreneurs as part of our network. Recently, we embarked on an incredible fam trip to the breathtaking Maldives!",
+    date: "Jun 2023",
+    likes: 142,
+    comments: 1,
+    imageUrl: "/images/linkedin-women-entrepreneurs.png",
+    postUrl: "https://www.linkedin.com/posts/travclanb2b_future-network-entrepreneurs-activity-7076927327183511552-yupT",
+    category: "trips",
+  },
+  // Campaigns & Celebrations
+  {
+    title: "IPL Fever: Cricket Quiz Winners",
+    caption: "TravClan organized the Ultimate Cricket Quiz with free IPL tickets as prizes! Thanks to Saudi Arabia Tourism for providing these exclusive tickets to our winning travel agents.",
+    date: "May 2023",
+    likes: 144,
+    comments: 1,
+    imageUrl: "/images/linkedin-ipl-fever.png",
+    postUrl: "https://www.linkedin.com/posts/travclanb2b_ipl2023-iplfever-ipllive-activity-7066403973527744512-P80l",
+    category: "campaigns",
+  },
+  {
+    title: "Celebrating Record-Breaking Sales Success",
+    caption: "Shoutout to our phenomenal team who poured their heart and souls into last week's groundbreaking sale, surpassing all targets! In the startup world, passion meets persistence.",
+    date: "Jul 2023",
+    likes: 386,
+    comments: 4,
+    imageUrl: "/images/linkedin-sales-success.png",
+    postUrl: "https://www.linkedin.com/posts/travclanb2b_achievement-success-growth-activity-7087394988853985280-4RYx",
+    category: "campaigns",
+  },
+  {
+    title: "July Dump: Moments of Joy",
+    caption: "This month, our camera roll overflowed with pure moments of joy and laughter. Here's a glimpse of the incredible team culture that makes TravClan special.",
+    date: "Aug 2023",
+    likes: 247,
+    comments: 5,
+    imageUrl: "/images/linkedin-july-dump.png",
+    postUrl: "https://www.linkedin.com/posts/travclanb2b_julydump-julyinamonth-joy-activity-7094260136604557313-DN6Y",
+    category: "campaigns",
+  },
+]
+
 const brandProjectsData = [
   {
     id: "newcastle-university",
@@ -208,6 +315,7 @@ const brandProjectsData = [
       { url: "https://www.instagram.com/official.travclan/?hl=en", label: "TravClan Official" },
       { url: "https://www.instagram.com/life.at.travclan/?hl=en", label: "Life at TravClan" },
     ],
+    linkedInLink: "https://www.linkedin.com/company/travclanb2b",
     projects: [
       {
         title: "Social Media Carousel Posts",
@@ -216,6 +324,14 @@ const brandProjectsData = [
         results:
           "The carousel posts achieved a 45% higher engagement rate compared to standard posts, with increased shares and saves. The consistent branding and informative content helped establish TravClan as an authority in the travel space.",
         customContent: "carousel-posts",
+      },
+      {
+        title: "LinkedIn Content Strategy & Campaigns",
+        description:
+          "Crafted and managed engaging LinkedIn content for TravClan, covering team achievements, company culture, and travel industry insights. Created posts that showcased company milestones, employee success stories, and B2B travel solutions.",
+        results:
+          "Achieved consistent engagement of 150–300+ likes per post, boosting overall LinkedIn engagement by over 30%.",
+        customContent: "linkedin-posts",
       },
       {
         title: "The Great Himachal Festival",
@@ -387,6 +503,7 @@ export function ProjectsSection() {
                 carouselPosts={brand.id === "travclan" ? travClanCarouselPosts : undefined}
                 tfpCarouselPosts={brand.id === "the-first-parents" ? tfpCarouselPosts : undefined}
                 sacsCarouselPosts={brand.id === "newcastle-university" ? sacsCarouselPosts : undefined}
+                linkedInPosts={brand.id === "travclan" ? linkedInPostsData : undefined}
               />
             </TabsContent>
           ))}

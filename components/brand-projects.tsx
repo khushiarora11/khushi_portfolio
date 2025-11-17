@@ -8,7 +8,8 @@ import { CarouselPostsGrid } from "@/components/carousel-posts-grid"
 import { VideoProjectCard } from "@/components/video-project-card"
 import { InstagramProjectCard } from "@/components/instagram-project-card"
 import { InstagramReelsMarquee } from "@/components/instagram-reels-marquee"
-import { Instagram } from "lucide-react"
+import { LinkedInPostCard } from "@/components/linkedin-post-card"
+import { Instagram, Linkedin } from 'lucide-react'
 import Link from "next/link"
 
 interface SubProject {
@@ -21,6 +22,17 @@ interface CarouselPost {
   title: string
   description: string
   imageUrl: string
+}
+
+interface LinkedInPost {
+  title: string
+  caption: string
+  date: string
+  likes: number
+  comments: number
+  imageUrl: string
+  postUrl: string
+  category?: string
 }
 
 interface Project {
@@ -54,6 +66,8 @@ interface BrandProjectsProps {
   tfpCarouselPosts?: CarouselPost[]
   sacsCarouselPosts?: CarouselPost[]
   instagramLinks?: InstagramLink[]
+  linkedInLink?: string
+  linkedInPosts?: LinkedInPost[]
 }
 
 export function BrandProjects({
@@ -65,6 +79,8 @@ export function BrandProjects({
   tfpCarouselPosts,
   sacsCarouselPosts,
   instagramLinks,
+  linkedInLink,
+  linkedInPosts,
 }: BrandProjectsProps) {
   return (
     <motion.div
@@ -78,38 +94,123 @@ export function BrandProjects({
         <CardHeader className="bg-gradient-to-r from-fuchsia-100 to-violet-100 dark:from-fuchsia-900/30 dark:to-violet-900/30">
           <CardTitle className="text-2xl font-bold text-fuchsia-600 dark:text-fuchsia-400">{brandName}</CardTitle>
           <CardDescription className="text-base">{brandDescription}</CardDescription>
-          {instagramLinks && instagramLinks.length > 0 && (
-            <div className="flex items-center gap-2 flex-wrap pt-2">
-              <span className="text-sm text-muted-foreground">
-                {brandName === "TravClan"
-                  ? "Worked on two accounts:"
-                  : brandName === "Newcastle University"
-                    ? "Follow us on Instagram:"
-                    : "Instagram:"}
-              </span>
-              <div className="flex gap-2 items-center">
-                {instagramLinks.map((link, idx) => (
-                  <Link
-                    key={idx}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-fuchsia-600 dark:text-fuchsia-400 hover:text-fuchsia-700 dark:hover:text-fuchsia-300 transition-colors"
-                    title={link.label || "Instagram"}
-                  >
-                    <Instagram className="h-5 w-5" />
-                    <span className="text-sm font-medium">{link.label}</span>
-                  </Link>
-                ))}
+          <div className="flex items-center gap-4 flex-wrap pt-2">
+            {instagramLinks && instagramLinks.length > 0 && (
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="text-sm text-muted-foreground">
+                  {brandName === "TravClan"
+                    ? "Worked on two accounts:"
+                    : brandName === "Newcastle University"
+                      ? "Follow us on Instagram:"
+                      : "Instagram:"}
+                </span>
+                <div className="flex gap-2 items-center">
+                  {instagramLinks.map((link, idx) => (
+                    <Link
+                      key={idx}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-fuchsia-600 dark:text-fuchsia-400 hover:text-fuchsia-700 dark:hover:text-fuchsia-300 transition-colors"
+                      title={link.label || "Instagram"}
+                    >
+                      <Instagram className="h-5 w-5" />
+                      <span className="text-sm font-medium">{link.label}</span>
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
+            )}
+            {linkedInLink && (
+              <div className="flex items-center gap-2">
+                <span className="text-sm text-muted-foreground">LinkedIn:</span>
+                <Link
+                  href={linkedInLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-fuchsia-600 dark:text-fuchsia-400 hover:text-fuchsia-700 dark:hover:text-fuchsia-300 transition-colors"
+                  title="LinkedIn"
+                >
+                  <Linkedin className="h-5 w-5" />
+                  <span className="text-sm font-medium">TravClan</span>
+                </Link>
+              </div>
+            )}
+          </div>
         </CardHeader>
         <CardContent className="p-6">
           <div className="grid grid-cols-1 gap-6">
             {projects.map((project, idx) => (
               <div key={idx}>
-                {project.customContent === "sacs-carousel-posts" && sacsCarouselPosts ? (
+                {project.customContent === "linkedin-posts" && linkedInPosts ? (
+                  <Card className="overflow-hidden h-full border-fuchsia-200 dark:border-fuchsia-800 hover:shadow-md transition-shadow duration-300">
+                    <CardHeader className="pb-2">
+                      <CardTitle className="text-xl font-bold text-fuchsia-600 dark:text-fuchsia-400">
+                        {project.title}
+                      </CardTitle>
+                      <CardDescription className="text-base">{project.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="bg-fuchsia-50 dark:bg-fuchsia-900/20 p-3 rounded-md mb-6">
+                        <p className="font-medium text-fuchsia-800 dark:text-fuchsia-300">Results:</p>
+                        <p className="text-muted-foreground">{project.results}</p>
+                      </div>
+
+                      <div className="space-y-8">
+                        {/* Team Promotions Section */}
+                        {linkedInPosts.some(post => post.category === 'promotions') && (
+                          <div>
+                            <h4 className="text-lg font-semibold text-fuchsia-600 dark:text-fuchsia-400 mb-4 flex items-center gap-2">
+                              <span className="h-1 w-8 bg-fuchsia-600 dark:bg-fuchsia-400 rounded"></span>
+                              Team Promotions
+                            </h4>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                              {linkedInPosts
+                                .filter(post => post.category === 'promotions')
+                                .map((post, postIdx) => (
+                                  <LinkedInPostCard key={postIdx} {...post} />
+                                ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Trips & Events Section */}
+                        {linkedInPosts.some(post => post.category === 'trips') && (
+                          <div>
+                            <h4 className="text-lg font-semibold text-fuchsia-600 dark:text-fuchsia-400 mb-4 flex items-center gap-2">
+                              <span className="h-1 w-8 bg-fuchsia-600 dark:bg-fuchsia-400 rounded"></span>
+                              Trips & Events
+                            </h4>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                              {linkedInPosts
+                                .filter(post => post.category === 'trips')
+                                .map((post, postIdx) => (
+                                  <LinkedInPostCard key={postIdx} {...post} />
+                                ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Campaigns & Celebrations Section */}
+                        {linkedInPosts.some(post => post.category === 'campaigns') && (
+                          <div>
+                            <h4 className="text-lg font-semibold text-fuchsia-600 dark:text-fuchsia-400 mb-4 flex items-center gap-2">
+                              <span className="h-1 w-8 bg-fuchsia-600 dark:bg-fuchsia-400 rounded"></span>
+                              Campaigns & Celebrations
+                            </h4>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                              {linkedInPosts
+                                .filter(post => post.category === 'campaigns')
+                                .map((post, postIdx) => (
+                                  <LinkedInPostCard key={postIdx} {...post} />
+                                ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
+                ) : project.customContent === "sacs-carousel-posts" && sacsCarouselPosts ? (
                   <Card className="overflow-hidden h-full border-fuchsia-200 dark:border-fuchsia-800 hover:shadow-md transition-shadow duration-300">
                     <CardHeader className="pb-2">
                       <CardTitle className="text-xl font-bold text-fuchsia-600 dark:text-fuchsia-400">
